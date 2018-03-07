@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE log4c SYSTEM "">
+
+<log4c>
+
+	<config>
+		<bufsize>0</bufsize>
+		<debug level="0"/>
+		<nocleanup>0</nocleanup>
+	</config>
+
+	<category name="test" priority="TRACE" appender="testappender" />
+	<category name="test1" priority="TRACE" appender="testappender1" />
+	<appender name="testappender" type="stream" layout="ve_debug"/>
+	<appender name="testappender1" type="stream" layout="ve"/>
+	<layout name="ve_debug" type="ve_layout_debug"/>
+	<layout name="ve" type="ve_layout"/>
+</log4c>
