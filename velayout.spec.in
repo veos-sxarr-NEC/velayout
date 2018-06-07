@@ -21,7 +21,7 @@
 
 Name:		@PACKAGE@
 Version:	@VERSION@
-Release:	@RELEASE@
+Release:	@RELEASE@%{?dist}
 Summary:	log4c layout library for VEOS
 Group:		System Environment/Libraries
 License:	LGPL
