@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.69])
-AC_INIT([velayout], [1.2.0], [t-aoyama@ap.jp.nec.com])
+AC_INIT([velayout], [1.3.1], [t-aoyama@ap.jp.nec.com])
 AC_CONFIG_SRCDIR([src/velayout.c])
 AC_CONFIG_SRCDIR([src/velayout.h])
 AC_CONFIG_HEADERS([config.h])
@@ -24,7 +24,8 @@ AC_PROG_CC
 # Checks for libraries.
 AC_ENABLE_SHARED
 AC_DISABLE_STATIC
-PKG_CHECK_MODULES([LOG4C], [log4c])
+AC_CHECK_LIB([log4c],[log4c_init],[],
+		[AC_MSG_ERROR([log4c library support missing/incomplete])])
 
 # Checks for header files.
 
@@ -34,5 +35,9 @@ PKG_CHECK_MODULES([LOG4C], [log4c])
 
 AC_CONFIG_FILES([Makefile
 		 velayout.spec
-                 src/Makefile])
+		 src/Makefile
+		 debian/rules
+		 debian/control
+		 debian/velayout.install
+		 debian/velayout-dev.install])
 AC_OUTPUT
