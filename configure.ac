@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.69])
-AC_INIT([velayout], [2.5.0], [t-aoyama@ap.jp.nec.com])
+AC_INIT([velayout], [3.6.0], [t-aoyama@ap.jp.nec.com])
 AC_CONFIG_SRCDIR([src/velayout.c])
 AC_CONFIG_SRCDIR([src/velayout.h])
 AC_CONFIG_HEADERS([config.h])

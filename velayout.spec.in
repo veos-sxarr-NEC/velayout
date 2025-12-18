@@ -44,11 +44,20 @@ This package contains header required to build applications that
 use velayout library
 
 %define _prefix @prefix@
+%if 0%{?rhel} >= 10
+%global __perl /usr/bin/perl
+%endif
 
 %prep
+%if 0%{?rhel} >= 10
+export PERL=%{__perl}
+%endif
 %setup -q
 
 %build
+%if 0%{?rhel} >= 10
+export PERL=%{__perl}
+%endif
 %configure
 make %{?_smp_mflags}
 
